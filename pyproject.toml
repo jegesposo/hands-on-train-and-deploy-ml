@@ -6,7 +6,7 @@ authors = ["Pau <plabartabajo@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.11"
+python = ">=3.10,<3.13"
 requests = "^2.30.0"
 pandas = "1.5.3"
 fire = "^0.5.0"
@@ -21,6 +21,7 @@ comet-ml = "3.32.6"
 cerebrium = "^1.1.1"
 torch = "1.13.1"
 pydantic = "^2.1.1"
+numpy = "1.26.4"
 
 
 [build-system]

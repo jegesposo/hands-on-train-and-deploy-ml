@@ -27,11 +27,15 @@ def train(
     Train a boosting tree model using the input features `X` and targets `y`,
     possibly running hyperparameter tuning.
     """
-    experiment = Experiment(
-        api_key = os.environ["COMET_ML_API_KEY"],
-        workspace=os.environ["COMET_ML_WORKSPACE"],
-        project_name = "hands-on-train-and-deploy-tutorial",
-    )
+    try:
+        experiment = Experiment(
+            api_key=os.environ["COMET_ML_API_KEY"],
+            workspace=os.environ["COMET_ML_WORKSPACE"],
+            project_name="hands-on-train-and-deploy-tutorial",
+        )
+    except KeyError as e:
+        logger.error(f'Missing environment variable: {e}')
+        return None
     experiment.add_tag('baseline_model')
 
     # split the data into train and test

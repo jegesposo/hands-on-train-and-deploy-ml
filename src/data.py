@@ -73,3 +73,4 @@ def download_data_for_one_day(product_id: str, day: str) -> pd.DataFrame:
 if __name__== '__main__':
     fire.Fire(download_ohlc_data_from_coinbase)
 
+
